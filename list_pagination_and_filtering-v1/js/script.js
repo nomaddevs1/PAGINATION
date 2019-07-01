@@ -172,35 +172,3 @@ e.target.className = "active"
 
 appendslink(list);
 
-
-function searchBot(){
-  let h3El = document.querySelectorAll("h3");
-  for(let i = 0; i < liEl.length; i++ ){
-    let h3Arr = h3El[i].textContent.toLowerCase();
-    const search = searchVal.value;
-    liEl[i].classList.remove("student-item");
-
-    if(h3Arr.includes(search.toLowerCase()) || search == ""){
-      liEl[i].className = "student-item";
-      liEl[i].classList.remove("none")
-    }else{
-      liEl[i].className = "none";
-    }
-  }
-  appendslink(list)
-  removePage()
-    }
-
-function removePage(){
-  const paginationDiv = document.getElementsByClassName('pagination');
-  pageFromBody.removeChild(paginationDiv[0]);
-}
-searchVal.addEventListener("keyup", () => {
-  searchBot()
-})
-button.addEventListener("click", () => {
-  searchBot()
-})
-
-
-// Remember to delete the comments that came with this file, and replace them with your own code comments.
