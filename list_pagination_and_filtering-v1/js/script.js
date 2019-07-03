@@ -27,8 +27,8 @@ it also creates element for each list. it paginates the list into different page
 **/
   function appendslink(list){
     const totalPage = () => {
-      if(list.length % itemsPerPage < 0){
-        return lis.length/ itemsPerPage + 1;
+      if(list.length % itemsPerPage > 0){
+        return list.length/ itemsPerPage + 1;
       }
       return list.length/ itemsPerPage;
     }
@@ -49,7 +49,7 @@ it also creates element for each list. it paginates the list into different page
       aEl.href = "#";
 
       aEl.textContent = i;
-      aEl.className = "active"
+
       liEl.appendChild(aEl)
     }
   }
@@ -69,7 +69,6 @@ it also creates element for each list. it paginates the list into different page
 
           }
           }
-
 
       })
     }
